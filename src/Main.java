@@ -9,7 +9,7 @@ public class Main {
         ArrayList<Integer> list = fillArray(size);
         printArray(list);
         ArrayList<Integer> evenList = deleteEven(list);
-        System.out.println();
+//        System.out.println();
         System.out.println(deleteEven(list) + "Список без четных чисел: ");
         printArray(evenList);
         System.out.println();

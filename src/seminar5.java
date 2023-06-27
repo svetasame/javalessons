@@ -139,10 +139,31 @@ public class seminar5 {
 //        addContact(book, "Измайлов", "89644438885");
 //        addContact(book, "Иванова", "89643122955");
 
-        for(int i = 0; i<5; i++) {
-            addContact(book, scan("Введите фамилию: "), scan("Введите телефон: "));
+        //for(int i = 0; i<5; i++) {
+            //addContact(book, scan("Введите фамилию: "), scan("Введите телефон: "));
+        //}
+        //printBook(book);
+        addEl(book, "Ivan", "123");
+        addEl(book, "Ivan", "12563");
+        addEl(book, "Зуек", "1255563");
+        addEl(book, "Зуек", "12554686763");
+        addEl(book, "Зуек", "1258663");
+        ArrayList<String> stringList = new ArrayList<>();
+        for (String s: book.keySet()) {
+           stringList.add(s);
         }
-        printBook(book);
+        Collections.sort(stringList, new Comparator<String>() {
+            @Override
+           public int compare(String o1, String o2) {
+                return book.get(o1).size() - book.get(o2).size();
+           }
+        });
+        System.out.println(stringList);
+
+    }
+    private static void addEl(HashMap<String, ArrayList<String>> book, String name, String phone){
+        book.putIfAbsent(name, new ArrayList<>());
+        book.get(name).add(phone);
     }
 
 
